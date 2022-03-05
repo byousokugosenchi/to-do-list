@@ -32,9 +32,13 @@ function newElement() {
 function clickElement() {
     let checked = document.getElementById('myUL').children;
     for (let i = 0; i < checked.length; i++) {
-        checked[i].addEventListener("click", function () {
-            this.className = 'checked';                   // Nhờ thầy giải thích cách dùng this 
-        });
+        checked[i].onclick = function () {
+            if (this.className === "") {
+                this.className = "checked";
+            } else {
+                this.className = "";
+            }
+        };
     }
 
 }
